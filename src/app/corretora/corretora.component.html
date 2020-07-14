@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+</nav>
+<div class="container">
+	<div class="card add-entity">		
+	    <h5 class="card-header">Lista de Corretoras</h5>
+	    <div class="card-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Criado em</th>
+						<th scope="col">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let obj of dataCorretora">
+						<td>{{ obj.nome }}</td>
+						<td>{{ obj.created_at }}</td>
+						<td><button class="btn btn-warning mx-2" routerLink="/usuario/edit/{{obj.id}}">Editar</button><button class="btn btn-danger" (click)="deleteCorretoraData(obj.id)">Excluir</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+	<div class="card add-entity">
+	    <h5 class="card-header">Adicionar Corretora</h5>
+	    <div class="card-body">
+			<form>
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text" name="nome" class="form-control" [(ngModel)]="corretora.nome">
+				</div>	
+				
+				<div class="form-group">
+					<button class="btn btn-primary">Adicionar Corretora </button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>

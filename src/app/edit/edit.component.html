@@ -1,0 +1,27 @@
+<div class="card add-entity">
+	    <h5 class="card-header">Atualizar Usuário</h5>
+	    <div class="card-body">
+			<form (ngSubmit)="updateUsuarioData()">
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text" name="name" class="form-control" [(ngModel)]="usuario.name">
+				</div>	
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" name="email" class="form-control" [(ngModel)]="usuario.email">
+				</div>
+				<div class="form-group">
+					<label>Senha</label>
+					<input type="password" name="password" class="form-control" [(ngModel)]="usuario.password">
+				</div>
+				<div class="form-group">
+					<label>Confirmação de Senha</label>
+					<input type="password" name="password_confirmation" class="form-control" [(ngModel)]="usuario.password_confirmation">
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-primary">Editar </button>
+				</div>
+			</form>
+		</div>
+	</div>

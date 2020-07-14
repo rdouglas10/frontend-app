@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+</nav>
+<app-header></app-header>
+<div class="container">
+	<div class="card add-entity">		
+	    <h5 class="card-header">Lista de Usuários</h5>
+	    <div class="card-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Email</th>
+						<th scope="col">Criado em</th>
+						<th scope="col">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let obj of dataArr">
+						<td>{{ obj.name }}</td>
+						<td>{{ obj.email }}</td>
+						<td>{{ obj.created_at }}</td>
+						<td><button class="btn btn-warning mx-2" routerLink="/usuario/edit/{{obj.id}}">Editar</button><button class="btn btn-danger" (click)="deleteUsuarioData(obj.id)">Excluir</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+	<div class="card add-entity">
+	    <h5 class="card-header">Adicionar Usuário</h5>
+	    <div class="card-body">
+			<form (ngSubmit)="insertUsuarioData()">
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text" name="name" class="form-control" [(ngModel)]="usuario.name">
+				</div>	
+				<div class="form-group">
+					<label>Email</label>
+					<input type="email" name="email" class="form-control" [(ngModel)]="usuario.email">
+				</div>
+				<div class="form-group">
+					<label>Senha</label>
+					<input type="password" name="password" class="form-control" [(ngModel)]="usuario.password">
+				</div>
+				<div class="form-group">
+					<label>Confirmação de Senha</label>
+					<input type="password" name="password_confirmation" class="form-control" [(ngModel)]="usuario.password_confirmation">
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-primary">Adicionar Usuário </button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
